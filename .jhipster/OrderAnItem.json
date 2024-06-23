@@ -79,6 +79,14 @@
     }
   ],
   "name": "OrderAnItem",
-  "relationships": [],
+  "relationships": [
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "orderAnItem",
+      "relationshipName": "order",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
   "searchEngine": "no"
 }

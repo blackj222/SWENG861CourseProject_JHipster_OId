@@ -2,6 +2,7 @@ package edu.psgv.sweng861.domain;
 
 import static edu.psgv.sweng861.domain.EmployeeInformationTestSamples.*;
 import static edu.psgv.sweng861.domain.ItemTestSamples.*;
+import static edu.psgv.sweng861.domain.OrderAnItemTestSamples.*;
 import static edu.psgv.sweng861.domain.OrderTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -58,5 +59,27 @@ class OrderTest {
         order.setItems(new HashSet<>());
         assertThat(order.getItems()).doesNotContain(itemBack);
         assertThat(itemBack.getOrder()).isNull();
+    }
+
+    @Test
+    void orderAnItemTest() {
+        Order order = getOrderRandomSampleGenerator();
+        OrderAnItem orderAnItemBack = getOrderAnItemRandomSampleGenerator();
+
+        order.addOrderAnItem(orderAnItemBack);
+        assertThat(order.getOrderAnItems()).containsOnly(orderAnItemBack);
+        assertThat(orderAnItemBack.getOrder()).isEqualTo(order);
+
+        order.removeOrderAnItem(orderAnItemBack);
+        assertThat(order.getOrderAnItems()).doesNotContain(orderAnItemBack);
+        assertThat(orderAnItemBack.getOrder()).isNull();
+
+        order.orderAnItems(new HashSet<>(Set.of(orderAnItemBack)));
+        assertThat(order.getOrderAnItems()).containsOnly(orderAnItemBack);
+        assertThat(orderAnItemBack.getOrder()).isEqualTo(order);
+
+        order.setOrderAnItems(new HashSet<>());
+        assertThat(order.getOrderAnItems()).doesNotContain(orderAnItemBack);
+        assertThat(orderAnItemBack.getOrder()).isNull();
     }
 }

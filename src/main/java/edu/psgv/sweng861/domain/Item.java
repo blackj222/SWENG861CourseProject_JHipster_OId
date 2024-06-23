@@ -80,7 +80,7 @@ public class Item implements Serializable {
     private String couponText;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "employeeInformation", "items" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "employeeInformation", "items", "orderAnItems" }, allowSetters = true)
     private Order order;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

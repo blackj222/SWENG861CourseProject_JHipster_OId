@@ -36,6 +36,7 @@ type OrderAnItemFormGroupContent = {
   salesVolume: FormControl<IOrderAnItem['salesVolume']>;
   delivery: FormControl<IOrderAnItem['delivery']>;
   couponText: FormControl<IOrderAnItem['couponText']>;
+  order: FormControl<IOrderAnItem['order']>;
 };
 
 export type OrderAnItemFormGroup = FormGroup<OrderAnItemFormGroupContent>;
@@ -75,6 +76,7 @@ export class OrderAnItemFormService {
       salesVolume: new FormControl(orderAnItemRawValue.salesVolume),
       delivery: new FormControl(orderAnItemRawValue.delivery),
       couponText: new FormControl(orderAnItemRawValue.couponText),
+      order: new FormControl(orderAnItemRawValue.order),
     });
   }
 

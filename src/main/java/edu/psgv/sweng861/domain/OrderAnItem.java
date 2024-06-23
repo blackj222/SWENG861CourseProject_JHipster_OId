@@ -1,5 +1,6 @@
 package edu.psgv.sweng861.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
@@ -77,6 +78,10 @@ public class OrderAnItem implements Serializable {
 
     @Column(name = "coupon_text")
     private String couponText;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = { "employeeInformation", "items", "orderAnItems" }, allowSetters = true)
+    private Order order;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -325,6 +330,19 @@ public class OrderAnItem implements Serializable {
 
     public void setCouponText(String couponText) {
         this.couponText = couponText;
+    }
+
+    public Order getOrder() {
+        return this.order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public OrderAnItem order(Order order) {
+        this.setOrder(order);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
