@@ -10,7 +10,8 @@
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
         "employeeInformation": "Employee Information",
         "order": "Order",
-        "item": "Item"
+        "item": "Item",
+        "orderAnItem": "Order An Item"
       },
       "account": {
         "main": "Cuenta",

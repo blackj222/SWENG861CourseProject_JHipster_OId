@@ -1,26 +1,26 @@
 import { IEmployeeInformation, NewEmployeeInformation } from './employee-information.model';
 
 export const sampleWithRequiredData: IEmployeeInformation = {
-  id: 5243,
-  name: 'anarchist anxiety',
-  handle: 'immense er injustice',
+  id: 26194,
+  name: 'shoemaker millisecond smoke',
+  handle: 'hence margarine after',
 };
 
 export const sampleWithPartialData: IEmployeeInformation = {
-  id: 30592,
-  name: 'despite easily frantically',
-  handle: 'without',
+  id: 2058,
+  name: 'juxtapose before whereas',
+  handle: 'whoever boo',
 };
 
 export const sampleWithFullData: IEmployeeInformation = {
-  id: 31385,
-  name: 'visualize cruise',
-  handle: 'toffee woozy puma',
+  id: 8801,
+  name: 'kielbasa diaper',
+  handle: 'glum',
 };
 
 export const sampleWithNewData: NewEmployeeInformation = {
-  name: 'exactly anenst startle',
-  handle: 'uh-huh with while',
+  name: 'astrakhan',
+  handle: 'lazily',
   id: null,
 };
 

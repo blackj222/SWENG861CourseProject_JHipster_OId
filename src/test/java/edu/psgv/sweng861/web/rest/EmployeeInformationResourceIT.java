@@ -332,7 +332,7 @@ class EmployeeInformationResourceIT {
         EmployeeInformation partialUpdatedEmployeeInformation = new EmployeeInformation();
         partialUpdatedEmployeeInformation.setId(employeeInformation.getId());
 
-        partialUpdatedEmployeeInformation.name(UPDATED_NAME).handle(UPDATED_HANDLE);
+        partialUpdatedEmployeeInformation.handle(UPDATED_HANDLE);
 
         restEmployeeInformationMockMvc
             .perform(

@@ -15,7 +15,7 @@ describe('Item e2e test', () => {
   const itemPageUrlPattern = new RegExp('/item(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const itemSample = { asin: 'ack neatly' };
+  const itemSample = { asin: 'sit eek excitable' };
 
   let item;
 
@@ -160,38 +160,38 @@ describe('Item e2e test', () => {
     });
 
     it('should create an instance of Item', () => {
-      cy.get(`[data-cy="asin"]`).type('curiously freely');
-      cy.get(`[data-cy="asin"]`).should('have.value', 'curiously freely');
+      cy.get(`[data-cy="asin"]`).type('cobble');
+      cy.get(`[data-cy="asin"]`).should('have.value', 'cobble');
 
-      cy.get(`[data-cy="productTitle"]`).type('joyfully fooey vice');
-      cy.get(`[data-cy="productTitle"]`).should('have.value', 'joyfully fooey vice');
+      cy.get(`[data-cy="productTitle"]`).type('minus apropos');
+      cy.get(`[data-cy="productTitle"]`).should('have.value', 'minus apropos');
 
-      cy.get(`[data-cy="productPrice"]`).type('meh gleefully sunny');
-      cy.get(`[data-cy="productPrice"]`).should('have.value', 'meh gleefully sunny');
+      cy.get(`[data-cy="productPrice"]`).type('treaty gigantic');
+      cy.get(`[data-cy="productPrice"]`).should('have.value', 'treaty gigantic');
 
-      cy.get(`[data-cy="productOriginalPrice"]`).type('deduce scaly');
-      cy.get(`[data-cy="productOriginalPrice"]`).should('have.value', 'deduce scaly');
+      cy.get(`[data-cy="productOriginalPrice"]`).type('pricey oof');
+      cy.get(`[data-cy="productOriginalPrice"]`).should('have.value', 'pricey oof');
 
-      cy.get(`[data-cy="currency"]`).type('enthusiastically studious');
-      cy.get(`[data-cy="currency"]`).should('have.value', 'enthusiastically studious');
+      cy.get(`[data-cy="currency"]`).type('fatal repackage hastily');
+      cy.get(`[data-cy="currency"]`).should('have.value', 'fatal repackage hastily');
 
-      cy.get(`[data-cy="productStarRating"]`).type('about');
-      cy.get(`[data-cy="productStarRating"]`).should('have.value', 'about');
+      cy.get(`[data-cy="productStarRating"]`).type('to upliftingly gosh');
+      cy.get(`[data-cy="productStarRating"]`).should('have.value', 'to upliftingly gosh');
 
-      cy.get(`[data-cy="productNumRatings"]`).type('3314');
-      cy.get(`[data-cy="productNumRatings"]`).should('have.value', '3314');
+      cy.get(`[data-cy="productNumRatings"]`).type('18587');
+      cy.get(`[data-cy="productNumRatings"]`).should('have.value', '18587');
 
-      cy.get(`[data-cy="productUrl"]`).type('subconscious towards');
-      cy.get(`[data-cy="productUrl"]`).should('have.value', 'subconscious towards');
+      cy.get(`[data-cy="productUrl"]`).type('meh');
+      cy.get(`[data-cy="productUrl"]`).should('have.value', 'meh');
 
-      cy.get(`[data-cy="productPhoto"]`).type('untried');
-      cy.get(`[data-cy="productPhoto"]`).should('have.value', 'untried');
+      cy.get(`[data-cy="productPhoto"]`).type('uselessly');
+      cy.get(`[data-cy="productPhoto"]`).should('have.value', 'uselessly');
 
-      cy.get(`[data-cy="productNumOffers"]`).type('10119');
-      cy.get(`[data-cy="productNumOffers"]`).should('have.value', '10119');
+      cy.get(`[data-cy="productNumOffers"]`).type('4706');
+      cy.get(`[data-cy="productNumOffers"]`).should('have.value', '4706');
 
-      cy.get(`[data-cy="productMinimumOfferPrice"]`).type('show down');
-      cy.get(`[data-cy="productMinimumOfferPrice"]`).should('have.value', 'show down');
+      cy.get(`[data-cy="productMinimumOfferPrice"]`).type('complain in');
+      cy.get(`[data-cy="productMinimumOfferPrice"]`).should('have.value', 'complain in');
 
       cy.get(`[data-cy="isBestSeller"]`).should('not.be.checked');
       cy.get(`[data-cy="isBestSeller"]`).click();
@@ -209,14 +209,14 @@ describe('Item e2e test', () => {
       cy.get(`[data-cy="climatePledgeFriendly"]`).click();
       cy.get(`[data-cy="climatePledgeFriendly"]`).should('be.checked');
 
-      cy.get(`[data-cy="salesVolume"]`).type('smug');
-      cy.get(`[data-cy="salesVolume"]`).should('have.value', 'smug');
+      cy.get(`[data-cy="salesVolume"]`).type('worship on in');
+      cy.get(`[data-cy="salesVolume"]`).should('have.value', 'worship on in');
 
-      cy.get(`[data-cy="delivery"]`).type('standing');
-      cy.get(`[data-cy="delivery"]`).should('have.value', 'standing');
+      cy.get(`[data-cy="delivery"]`).type('why');
+      cy.get(`[data-cy="delivery"]`).should('have.value', 'why');
 
-      cy.get(`[data-cy="couponText"]`).type('base loud');
-      cy.get(`[data-cy="couponText"]`).should('have.value', 'base loud');
+      cy.get(`[data-cy="couponText"]`).type('revise trusty');
+      cy.get(`[data-cy="couponText"]`).should('have.value', 'revise trusty');
 
       cy.get(entityCreateSaveButtonSelector).click();
 

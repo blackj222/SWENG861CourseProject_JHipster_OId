@@ -15,7 +15,7 @@ describe('EmployeeInformation e2e test', () => {
   const employeeInformationPageUrlPattern = new RegExp('/employee-information(\\?.*)?$');
   const username = Cypress.env('E2E_USERNAME') ?? 'user';
   const password = Cypress.env('E2E_PASSWORD') ?? 'user';
-  const employeeInformationSample = { name: 'dangle flawed peppery', handle: 'whoa' };
+  const employeeInformationSample = { name: 'next', handle: 'grandmom meh' };
 
   let employeeInformation;
 
@@ -160,11 +160,11 @@ describe('EmployeeInformation e2e test', () => {
     });
 
     it('should create an instance of EmployeeInformation', () => {
-      cy.get(`[data-cy="name"]`).type('burrow lazily ashtray');
-      cy.get(`[data-cy="name"]`).should('have.value', 'burrow lazily ashtray');
+      cy.get(`[data-cy="name"]`).type('unique');
+      cy.get(`[data-cy="name"]`).should('have.value', 'unique');
 
-      cy.get(`[data-cy="handle"]`).type('enormous');
-      cy.get(`[data-cy="handle"]`).should('have.value', 'enormous');
+      cy.get(`[data-cy="handle"]`).type('because deceivingly psst');
+      cy.get(`[data-cy="handle"]`).should('have.value', 'because deceivingly psst');
 
       cy.get(entityCreateSaveButtonSelector).click();
 
