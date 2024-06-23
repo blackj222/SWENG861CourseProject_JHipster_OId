@@ -54,6 +54,7 @@ public class CacheConfiguration {
             createCache(cm, edu.psgv.sweng861.domain.Order.class.getName());
             createCache(cm, edu.psgv.sweng861.domain.Order.class.getName() + ".items");
             createCache(cm, edu.psgv.sweng861.domain.Item.class.getName());
+            createCache(cm, edu.psgv.sweng861.domain.OrderAnItem.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

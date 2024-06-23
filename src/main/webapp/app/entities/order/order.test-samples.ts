@@ -3,30 +3,30 @@ import dayjs from 'dayjs/esm';
 import { IOrder, NewOrder } from './order.model';
 
 export const sampleWithRequiredData: IOrder = {
-  id: 30225,
-  title: 'music-making',
+  id: 31510,
+  title: 'debase glory',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2024-06-23T01:33'),
+  date: dayjs('2024-06-22T16:37'),
 };
 
 export const sampleWithPartialData: IOrder = {
-  id: 22686,
-  title: 'ramen',
+  id: 13237,
+  title: 'gah',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2024-06-22T19:47'),
+  date: dayjs('2024-06-22T10:23'),
 };
 
 export const sampleWithFullData: IOrder = {
-  id: 7520,
-  title: 'midst very batter',
+  id: 17069,
+  title: 'failing for complement',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2024-06-22T21:27'),
+  date: dayjs('2024-06-23T06:48'),
 };
 
 export const sampleWithNewData: NewOrder = {
-  title: 'yippee enclose tremendously',
+  title: 'until oof woot',
   content: '../fake-data/blob/hipster.txt',
-  date: dayjs('2024-06-22T14:00'),
+  date: dayjs('2024-06-23T00:20'),
   id: null,
 };
 

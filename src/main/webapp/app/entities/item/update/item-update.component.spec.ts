@@ -49,10 +49,10 @@ describe('Item Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Order query and add missing value', () => {
       const item: IItem = { id: 456 };
-      const order: IOrder = { id: 18301 };
+      const order: IOrder = { id: 15322 };
       item.order = order;
 
-      const orderCollection: IOrder[] = [{ id: 22099 }];
+      const orderCollection: IOrder[] = [{ id: 19201 }];
       jest.spyOn(orderService, 'query').mockReturnValue(of(new HttpResponse({ body: orderCollection })));
       const additionalOrders = [order];
       const expectedCollection: IOrder[] = [...additionalOrders, ...orderCollection];
@@ -71,7 +71,7 @@ describe('Item Management Update Component', () => {
 
     it('Should update editForm', () => {
       const item: IItem = { id: 456 };
-      const order: IOrder = { id: 405 };
+      const order: IOrder = { id: 13209 };
       item.order = order;
 
       activatedRoute.data = of({ item });
