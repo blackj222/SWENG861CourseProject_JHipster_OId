@@ -31,6 +31,27 @@ entity Item {
     couponText String
 }
 
+entity OrderAnItem {
+	asin String required
+    productTitle String
+    productPrice String
+    productOriginalPrice String
+    currency String
+    productStarRating String
+    productNumRatings Integer
+    productUrl String
+    productPhoto String
+    productNumOffers Integer
+    productMinimumOfferPrice String
+    isBestSeller Boolean
+    isAmazonChoice Boolean
+    isPrime Boolean
+    climatePledgeFriendly Boolean
+    salesVolume String
+    delivery String
+    couponText String
+}
+
 relationship ManyToOne {
     Order{EmployeeInformation(name)} to EmployeeInformation
     Item to Order
