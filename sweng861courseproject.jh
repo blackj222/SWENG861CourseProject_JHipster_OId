@@ -55,6 +55,7 @@ entity OrderAnItem {
 relationship ManyToOne {
     Order{EmployeeInformation(name)} to EmployeeInformation
     Item to Order
+    OrderAnItem to Order
 }
 
 relationship OneToOne {
