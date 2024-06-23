@@ -2,11 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 
 import SharedModule from 'app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { IOrder } from 'app/entities/order/order.model';
+import { OrderService } from 'app/entities/order/service/order.service';
 import { IOrderAnItem } from '../order-an-item.model';
 import { OrderAnItemService } from '../service/order-an-item.service';
 import { OrderAnItemFormService, OrderAnItemFormGroup } from './order-an-item-form.service';
@@ -21,12 +23,17 @@ export class OrderAnItemUpdateComponent implements OnInit {
   isSaving = false;
   orderAnItem: IOrderAnItem | null = null;
 
+  ordersSharedCollection: IOrder[] = [];
+
   protected orderAnItemService = inject(OrderAnItemService);
   protected orderAnItemFormService = inject(OrderAnItemFormService);
+  protected orderService = inject(OrderService);
   protected activatedRoute = inject(ActivatedRoute);
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   editForm: OrderAnItemFormGroup = this.orderAnItemFormService.createOrderAnItemFormGroup();
+
+  compareOrder = (o1: IOrder | null, o2: IOrder | null): boolean => this.orderService.compareOrder(o1, o2);
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ orderAnItem }) => {
@@ -34,6 +41,8 @@ export class OrderAnItemUpdateComponent implements OnInit {
       if (orderAnItem) {
         this.updateForm(orderAnItem);
       }
+
+      this.loadRelationshipsOptions();
     });
   }
 
@@ -73,5 +82,15 @@ export class OrderAnItemUpdateComponent implements OnInit {
   protected updateForm(orderAnItem: IOrderAnItem): void {
     this.orderAnItem = orderAnItem;
     this.orderAnItemFormService.resetForm(this.editForm, orderAnItem);
+
+    this.ordersSharedCollection = this.orderService.addOrderToCollectionIfMissing<IOrder>(this.ordersSharedCollection, orderAnItem.order);
+  }
+
+  protected loadRelationshipsOptions(): void {
+    this.orderService
+      .query()
+      .pipe(map((res: HttpResponse<IOrder[]>) => res.body ?? []))
+      .pipe(map((orders: IOrder[]) => this.orderService.addOrderToCollectionIfMissing<IOrder>(orders, this.orderAnItem?.order)))
+      .subscribe((orders: IOrder[]) => (this.ordersSharedCollection = orders));
   }
 }

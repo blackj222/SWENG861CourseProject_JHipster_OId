@@ -35,7 +35,8 @@
       "climatePledgeFriendly": "Climate Pledge Friendly",
       "salesVolume": "Sales Volume",
       "delivery": "Delivery",
-      "couponText": "Coupon Text"
+      "couponText": "Coupon Text",
+      "order": "Order"
     }
   }
 }

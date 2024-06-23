@@ -38,6 +38,13 @@
       "relationshipName": "item",
       "relationshipSide": "right",
       "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "orderAnItem",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "orderAnItem",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
     }
   ],
   "searchEngine": "no"

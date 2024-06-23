@@ -48,6 +48,11 @@ public class Order implements Serializable {
     @JsonIgnoreProperties(value = { "order" }, allowSetters = true)
     private Set<Item> items = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "order" }, allowSetters = true)
+    private Set<OrderAnItem> orderAnItems = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -143,6 +148,37 @@ public class Order implements Serializable {
     public Order removeItem(Item item) {
         this.items.remove(item);
         item.setOrder(null);
+        return this;
+    }
+
+    public Set<OrderAnItem> getOrderAnItems() {
+        return this.orderAnItems;
+    }
+
+    public void setOrderAnItems(Set<OrderAnItem> orderAnItems) {
+        if (this.orderAnItems != null) {
+            this.orderAnItems.forEach(i -> i.setOrder(null));
+        }
+        if (orderAnItems != null) {
+            orderAnItems.forEach(i -> i.setOrder(this));
+        }
+        this.orderAnItems = orderAnItems;
+    }
+
+    public Order orderAnItems(Set<OrderAnItem> orderAnItems) {
+        this.setOrderAnItems(orderAnItems);
+        return this;
+    }
+
+    public Order addOrderAnItem(OrderAnItem orderAnItem) {
+        this.orderAnItems.add(orderAnItem);
+        orderAnItem.setOrder(this);
+        return this;
+    }
+
+    public Order removeOrderAnItem(OrderAnItem orderAnItem) {
+        this.orderAnItems.remove(orderAnItem);
+        orderAnItem.setOrder(null);
         return this;
     }
 

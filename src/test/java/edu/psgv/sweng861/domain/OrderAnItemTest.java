@@ -1,6 +1,7 @@
 package edu.psgv.sweng861.domain;
 
 import static edu.psgv.sweng861.domain.OrderAnItemTestSamples.*;
+import static edu.psgv.sweng861.domain.OrderTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import edu.psgv.sweng861.web.rest.TestUtil;
@@ -20,5 +21,17 @@ class OrderAnItemTest {
 
         orderAnItem2 = getOrderAnItemSample2();
         assertThat(orderAnItem1).isNotEqualTo(orderAnItem2);
+    }
+
+    @Test
+    void orderTest() {
+        OrderAnItem orderAnItem = getOrderAnItemRandomSampleGenerator();
+        Order orderBack = getOrderRandomSampleGenerator();
+
+        orderAnItem.setOrder(orderBack);
+        assertThat(orderAnItem.getOrder()).isEqualTo(orderBack);
+
+        orderAnItem.order(null);
+        assertThat(orderAnItem.getOrder()).isNull();
     }
 }

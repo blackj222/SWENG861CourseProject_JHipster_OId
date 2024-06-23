@@ -89,6 +89,14 @@
           <dd>
             <span>{{ orderAnItem()!.couponText }}</span>
           </dd>
+          <dt><span jhiTranslate="sweng861CourseProjectApp.orderAnItem.order">Order</span></dt>
+          <dd>
+            @if (orderAnItem()!.order) {
+              <div>
+                <a [routerLink]="['/order', orderAnItem()!.order?.id, 'view']">{{ orderAnItem()!.order?.id }}</a>
+              </div>
+            }
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

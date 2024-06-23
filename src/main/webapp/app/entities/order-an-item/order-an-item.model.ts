@@ -1,3 +1,5 @@
+import { IOrder } from 'app/entities/order/order.model';
+
 export interface IOrderAnItem {
   id: number;
   asin?: string | null;
@@ -18,6 +20,7 @@ export interface IOrderAnItem {
   salesVolume?: string | null;
   delivery?: string | null;
   couponText?: string | null;
+  order?: IOrder | null;
 }
 
 export type NewOrderAnItem = Omit<IOrderAnItem, 'id'> & { id: null };

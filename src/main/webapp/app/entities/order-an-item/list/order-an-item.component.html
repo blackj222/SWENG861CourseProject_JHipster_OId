@@ -168,6 +168,12 @@
                 <fa-icon class="p-1" icon="sort"></fa-icon>
               </div>
             </th>
+            <th scope="col" jhiSortBy="order.id">
+              <div class="d-flex">
+                <span jhiTranslate="sweng861CourseProjectApp.orderAnItem.order">Order</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -195,6 +201,13 @@
               <td>{{ orderAnItem.salesVolume }}</td>
               <td>{{ orderAnItem.delivery }}</td>
               <td>{{ orderAnItem.couponText }}</td>
+              <td>
+                @if (orderAnItem.order) {
+                  <div>
+                    <a [routerLink]="['/order', orderAnItem.order.id, 'view']">{{ orderAnItem.order.id }}</a>
+                  </div>
+                }
+              </td>
               <td class="text-end">
                 <div class="btn-group">
                   <a [routerLink]="['/order-an-item', orderAnItem.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

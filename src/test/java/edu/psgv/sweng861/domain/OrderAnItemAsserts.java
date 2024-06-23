@@ -82,5 +82,9 @@ public class OrderAnItemAsserts {
      * @param expected the expected entity
      * @param actual the actual entity
      */
-    public static void assertOrderAnItemUpdatableRelationshipsEquals(OrderAnItem expected, OrderAnItem actual) {}
+    public static void assertOrderAnItemUpdatableRelationshipsEquals(OrderAnItem expected, OrderAnItem actual) {
+        assertThat(expected)
+            .as("Verify OrderAnItem relationships")
+            .satisfies(e -> assertThat(e.getOrder()).as("check order").isEqualTo(actual.getOrder()));
+    }
 }

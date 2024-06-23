@@ -38,6 +38,7 @@ describe('OrderAnItem Form Service', () => {
             salesVolume: expect.any(Object),
             delivery: expect.any(Object),
             couponText: expect.any(Object),
+            order: expect.any(Object),
           }),
         );
       });
@@ -66,6 +67,7 @@ describe('OrderAnItem Form Service', () => {
             salesVolume: expect.any(Object),
             delivery: expect.any(Object),
             couponText: expect.any(Object),
+            order: expect.any(Object),
           }),
         );
       });

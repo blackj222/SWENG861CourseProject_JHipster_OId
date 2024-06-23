@@ -22,7 +22,8 @@
       "content": "Content",
       "date": "Date",
       "employeeInformation": "Employee Information",
-      "item": "Item"
+      "item": "Item",
+      "orderAnItem": "Order An Item"
     }
   }
 }
